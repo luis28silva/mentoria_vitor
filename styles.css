@@ -23,14 +23,14 @@
   }
   h1,h2,h3,.serif{font-family:'Fraunces', serif;}
   .mono{font-family:'IBM Plex Mono', monospace; letter-spacing:0.04em;}
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--gold-500);
-    font-weight:500;
-  }
+ .eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:15px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--gold-500);
+  font-weight:500;
+}
   .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
   img{max-width:100%; display:block;}
   a{color:inherit;}
@@ -81,8 +81,12 @@
     overflow:hidden;
   }
   .hero-inner{
-    max-width:1120px; margin:0 auto; padding:80px 32px 0;
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:end;
+    max-width:1120px; 
+    margin:0 auto; 
+    padding:32px 32px 0;
+    display:grid; 
+    grid-template-columns:0.9fr 1.1fr;
+    gap:10px; align-items:end;
   }
   .hero-copy{ padding-bottom:64px; }
   .hero h1{
@@ -97,14 +101,19 @@
     font-size:17.5px; color:#C9D2DF; max-width:44ch; margin:0 0 34px;
   }
   .hero-actions{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+ 
   .hero-figure{
-    position:relative;
-    align-self:end;
-  }
-  .hero-figure img{
-    border-radius:4px 4px 0 0;
-    filter: grayscale(8%);
-  }
+  position:relative;
+  align-self:stretch;
+  overflow:hidden;
+}
+.hero-figure img{
+  border-radius:4px 4px 0 0;
+  filter: grayscale(8%);
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
   .hero-figure::before{
     content:"";
     position:absolute; inset:-14px -14px auto auto;
@@ -118,10 +127,10 @@
   }
   .chart-strip .wrap{ max-width:1120px; }
   .chart-caption{
-    display:flex; justify-content:space-between; margin-top:10px;
-    font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:#8FA0BC;
-    letter-spacing:0.04em;
-  }
+  display:flex; justify-content:space-between; margin-top:10px;
+  font-family:'IBM Plex Mono', monospace; font-size:14px; color:#8FA0BC;
+  letter-spacing:0.04em;
+}
 
   /* ---------- SECTION BASE ---------- */
   section{ padding:96px 0; }
@@ -192,12 +201,19 @@
     font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--gold-300);
     text-transform:uppercase; letter-spacing:0.06em;
   }
-  .test-avatar{
-    width:38px; height:38px; border-radius:50%;
-    border:1px dashed rgba(248,244,234,0.35);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'IBM Plex Mono', monospace; font-size:12px; color:#8FA0BC;
-  }
+.test-avatar{
+  width:38px; height:38px; border-radius:50%;
+  border:1px dashed rgba(248,244,234,0.35);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'IBM Plex Mono', monospace; font-size:12px; color:#8FA0BC;
+}
+.test-avatar-foto{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  object-fit:cover;
+  border:1px dashed rgba(248,244,234,0.35);
+}
 
   /* ---------- BOOK ---------- */
   .book{ background:var(--cream-50); }
@@ -205,10 +221,15 @@
     display:grid; grid-template-columns:0.55fr 1.45fr; gap:56px; align-items:center;
   }
   .book-cover{
-    aspect-ratio:3/4.4; background:linear-gradient(160deg, var(--navy-800), var(--navy-950));
-    border:1px solid var(--gold-500); display:flex; align-items:center; justify-content:center;
-    padding:26px; text-align:center;
-  }
+  aspect-ratio:3/4.4;
+  border:1px solid var(--gold-500);
+  overflow:hidden;
+}
+.book-cover img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
   .book-cover .cover-title{
     font-family:'Fraunces', serif; font-style:italic; color:var(--gold-300); font-size:19px; line-height:1.3;
   }
@@ -231,6 +252,41 @@
   .final-cta p{ color:#AEBAD0; max-width:48ch; margin:0 auto 40px; font-size:16px; }
   .cta-row{ display:flex; gap:18px; justify-content:center; flex-wrap:wrap; }
 
+  .mini-form{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:28px;
+  max-width:520px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.mini-form input{
+  flex:1;
+  min-width:160px;
+  padding:12px 16px;
+  border-radius:2px;
+  border:1px solid rgba(248,244,234,0.25);
+  background:rgba(248,244,234,0.08);
+  color:var(--cream-50);
+  font-family:'Work Sans', sans-serif;
+  font-size:14.5px;
+}
+.mini-form input::placeholder{
+  color:#8FA0BC;
+}
+.mini-form input:focus{
+  outline:none;
+  border-color:var(--gold-500);
+}
+
+.mini-form button{
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
   /* ---------- FOOTER ---------- */
   footer{ background:var(--cream-100); padding:36px 0; }
   .footer-inner{
@@ -246,15 +302,74 @@
     width:56px; height:56px; border-radius:50%;
     display:flex; align-items:center; justify-content:center;
     box-shadow:0 10px 30px -8px rgba(10,27,48,0.45);
-    font-size:22px; text-decoration:none;
+    font-size:26px; text-decoration:none;
   }
 
-  @media (max-width: 860px){
-    .hero-inner{ grid-template-columns:1fr; }
-    .hero-figure{ display:none; }
-    .story-grid, .book-grid{ grid-template-columns:1fr; }
-    .cred-grid, .test-grid{ grid-template-columns:1fr; }
-    .prog-grid{ grid-template-columns:1fr; }
-    nav ul{ display:none; }
-    section{ padding:64px 0; }
+#btn-mobile{
+  display:none;
+  background:none;
+  border:none;
+  font-size:1.6rem;
+  color:var(--gold-500);
+  cursor:pointer;
+  position:relative;
+  z-index:1000;
+}
+
+@media (max-width: 860px){
+   .hero-figure img{
+    object-position: top center;
   }
+   .hero-figure{
+    height:220px;
+  }
+
+  .hero-figure::before{
+    display:none;
+  }
+
+  .hero-inner{ grid-template-columns:1fr; padding-top:16px; }
+  .hero-figure{
+    height:280px;
+    order:-1;
+  }
+  .story-grid, .book-grid{ grid-template-columns:1fr; }
+  .cred-grid, .test-grid{ grid-template-columns:1fr; }
+  .prog-grid{ grid-template-columns:1fr; }
+  section{ padding:64px 0; }
+
+  .chart-caption{
+    flex-direction:column;
+    gap:6px;
+    font-size:12px;
+  }
+
+  #btn-mobile{ display:block; }
+
+  .nav-links{
+    position:fixed;
+    top:0; right:-100%;
+    width:100%; height:100vh;
+    background:var(--navy-950);
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:36px;
+    transition:right .3s ease;
+    z-index:999;
+  }
+  .nav-links.active{ right:0; }
+  .nav-links nav ul{
+    flex-direction:column;
+    align-items:center;
+    gap:32px;
+  }
+  .nav-links nav a{
+    color:var(--cream-50);
+    font-size:1.2rem;
+  }
+  .nav-links .btn-nav{
+    background:var(--gold-500);
+    color:var(--navy-950);
+  }
+}

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vitor Pauli — Mentoria VSD</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -14,14 +15,18 @@
 <header>
   <div class="nav-inner">
     <div class="brand">Vitor Pauli <small>MENTORIA VSD</small></div>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-links">
       <nav><ul>
+        <li><a href="#">Início</a></li>
         <li><a href="#historia">História</a></li>
         <li><a href="#mentoria">Mentoria</a></li>
         <li><a href="#livro">Livro</a></li>
       </ul></nav>
       <a href="#contato" class="btn btn-nav">Agendar diagnóstico</a>
     </div>
+    <button id="btn-mobile" aria-label="Abrir menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </div>
 </header>
 
@@ -33,22 +38,22 @@
       <p class="lead">Com Vitor Pauli você aprende a organizar as contas, negociar dívidas e voltar a dormir tranquilo — do jeito que ele mesmo fez, na prática.</p>
       <div class="hero-actions">
         <a href="#contato" class="btn btn-gold">Agendar diagnóstico gratuito</a>
-        <a href="#contato" class="btn btn-outline">Falar no WhatsApp →</a>
+        <a href="https://wa.me/5551996925148" target="_blank" class="btn btn-outline">Falar no WhatsApp →</a>
       </div>
     </div>
     <div class="hero-figure">
-      <img src="vitor-pauli-foto-crop.png" alt="Vitor Pauli, fundador da Mentoria VSD">
+      <img src="imagens/vitor.webp" alt="Vitor Pauli, fundador da Mentoria VSD">
     </div>
   </div>
   <div class="chart-strip">
     <div class="wrap">
       <svg viewBox="0 0 1056 90" width="100%" height="90" preserveAspectRatio="none">
-        <polyline points="0,20 60,48 110,30 170,66 230,42 290,78 340,52 380,70"
-          fill="none" stroke="#8E4A42" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
-        <circle cx="380" cy="70" r="4" fill="#DEC172"/>
-        <path d="M380,70 C460,58 520,20 620,16 S 820,10 1056,6"
-          fill="none" stroke="#C0982E" stroke-width="2.5" stroke-linecap="round"/>
-      </svg>
+      <polyline points="0,20 60,48 110,30 170,66 230,42 290,78 340,52 380,70"
+      fill="none" stroke="#8E4A42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+     <circle cx="380" cy="70" r="5" fill="#DEC172"/>
+     <path d="M380,70 C460,58 520,20 620,16 S 820,10 1056,6"
+     fill="none" stroke="#C0982E" stroke-width="3" stroke-linecap="round"/>
+    </svg>
       <div class="chart-caption">
         <span>2015 — atolado em dívidas</span>
         <span>o ponto de virada</span>
@@ -148,25 +153,36 @@
       <h2>Depoimentos de quem já saiu do vermelho.</h2>
     </div>
     <div class="test-grid">
-      <div class="test-card"><div class="test-avatar">?</div><span class="placeholder-tag">Depoimento em breve</span></div>
-      <div class="test-card"><div class="test-avatar">?</div><span class="placeholder-tag">Depoimento em breve</span></div>
-      <div class="test-card"><div class="test-avatar">?</div><span class="placeholder-tag">Depoimento em breve</span></div>
-    </div>
+  <div class="test-card">  
+    <img src="imagens/depoimentos/duas.jpg" alt="" class="test-avatar-foto">
+    <p style="font-size:14.5px; color:#C9D2DF; font-style:italic; margin:12px 0 16px;">"Eu não conseguia nem olhar pro extrato do banco. Depois da mentoria, sei exatamente pra onde vai cada real — e já paguei duas dívidas que achava impossível."</p>
+    <span class="story-sig" style="color:var(--gold-300);">Marcelo T. · cliente há 8 meses</span>
+  </div>
+  <div class="test-card">   
+    <img src="imagens/depoimentos/uma.jpg" alt="" class="test-avatar-foto">
+    <p style="font-size:14.5px; color:#C9D2DF; font-style:italic; margin:12px 0 16px;">"O que me marcou foi a clareza. Vitor não fica só no discurso motivacional, ele senta contigo e monta o plano — número por número."</p>
+    <span class="story-sig" style="color:var(--gold-300);">Renata S. · cliente há 1 ano</span>
+  </div>
+  <div class="test-card">
+    <img src="imagens/depoimentos/tres.jpg" alt="" class="test-avatar-foto">
+    <p style="font-size:14.5px; color:#C9D2DF; font-style:italic; margin:12px 0 16px;">"Hoje eu durmo tranquilo. Parece clichê, mas era exatamente isso que eu tinha perdido antes de começar a mentoria."</p>
+    <span class="story-sig" style="color:var(--gold-300);">Carlos E. · cliente há 5 meses</span>
+  </div>
+</div>
   </div>
 </section>
 
 <section class="book" id="livro">
   <div class="wrap book-grid">
     <div class="book-cover">
-      <span class="cover-title">Livre-se das Dívidas</span>
+      <img src="imagens/livro.jpeg" alt="">
     </div>
     <div class="book-copy">
-      <span class="book-badge">conteúdo fictício — substituir pelos dados reais</span>
-      <h3>Livre-se das Dívidas: O Caminho para a Estabilidade Financeira</h3>
-      <p class="subtitle">Baseado na própria trajetória de Vitor Pauli, do endividamento à liberdade financeira.</p>
-      <p>Neste livro, Vitor compartilha os métodos práticos que usou para sair das dívidas e alcançar estabilidade financeira — um guia direto para quem está cansado de dar desculpas e quer, de verdade, mudar de vida financeira.</p>
-      <a href="#" class="btn btn-outline-dark" style="margin-top:18px;">Saiba mais sobre o livro</a>
-    </div>
+  <h3>Livre-se das Dívidas: O Caminho para a Estabilidade Financeira</h3>
+  <p class="subtitle">Uma obra coletiva com 6 coautores, cada um compartilhando sua própria trajetória rumo à liberdade financeira.</p>
+  <p>Neste livro, Vitor Pauli assina um dos capítulos, onde compartilha os métodos práticos que usou para sair das dívidas e alcançar estabilidade financeira — ao lado de outros 5 coautores que trazem suas próprias histórias e estratégias sobre o tema.</p>
+  <a href="#" class="btn btn-outline-dark" style="margin-top:18px;">Saiba mais sobre o livro</a>
+</div>
   </div>
 </section>
 
@@ -174,12 +190,17 @@
   <div class="wrap">
     <span class="eyebrow">Pronto pra começar?</span>
     <h2>Pronto para respirar aliviado com as contas em dia?</h2>
-    <p>Agende um diagnóstico gratuito e descubra, em uma conversa, qual caminho faz mais sentido pra sua situação.</p>
+    <p>Fale agora no WhatsApp ou deixe seu contato que o Vitor te chama pra agendar o diagnóstico gratuito.</p>
+
     <div class="cta-row">
-      <a href="#" class="btn btn-gold">Agendar diagnóstico gratuito</a>
-      <a href="#" class="btn btn-outline">Falar no WhatsApp</a>
-      <a href="#" class="btn btn-ghost">Prefiro deixar meu contato</a>
+      <a href="https://wa.me/5551996925148" target="_blank" class="btn btn-gold">Falar no WhatsApp →</a>
     </div>
+
+    <form action="https://formsubmit.co/EMAIL-AQUI" method="POST" class="mini-form">
+      <input type="text" name="nome" placeholder="Seu nome" required />
+      <input type="tel" name="whatsapp" placeholder="Seu WhatsApp" required />
+      <button type="submit" class="btn btn-outline">Quero ser contatado</button>
+    </form>
   </div>
 </section>
 
@@ -191,7 +212,9 @@
   </div>
 </footer>
 
-<a href="#" class="whatsapp-float" title="Falar no WhatsApp">💬</a>
+<a href="https://wa.me/5551996925148" target="_blank" class="whatsapp-float" title="Falar no WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 <script src="script.js"></script>
 </body>
