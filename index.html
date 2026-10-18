@@ -3,18 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vitor Pauli — Mentoria VSD</title>
+<title>Vitor Pauli Finanças</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="styles.css" rel="stylesheet">
+<script>
+  try {
+    if (
+      !sessionStorage.getItem('abertura-vista') &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      document.documentElement.classList.add('com-abertura');
+    }
+  } catch (e) {}
+</script>
 </head>
 <body>
-
+  <div class="abertura" id="abertura" aria-hidden="true">
+  <div class="abertura-inner">
+    <svg class="abertura-grafico" viewBox="0 0 300 80">
+      <polyline class="ab-queda" pathLength="1"
+                points="4,14 40,40 70,26 105,56 140,40"/>
+      <path class="ab-subida" pathLength="1"
+            d="M140,40 C170,38 190,18 220,12 S270,6 296,4"/>
+    </svg>
+    <p class="abertura-nome">Vitor Pauli <em>Finanças</em></p>
+  </div>
+</div>
+  <span class="scroll-progress" aria-hidden="true"></span>
+</header>
 <header>
   <div class="nav-inner">
-    <div class="brand">Vitor Pauli <small>MENTORIA VSD</small></div>
+    <div class="brand">Vitor Pauli <small>FINANÇAS</small></div>
     <div class="nav-links" id="nav-links">
       <nav><ul>
         <li><a href="#">Início</a></li>
@@ -32,8 +54,13 @@
 
 <section class="hero">
   <div class="hero-inner">
+
+    <figure class="hero-bg">
+      <img src="imagens/vitor.webp" alt="Vitor Pauli sorrindo em seu escritório, com estante de livros ao fundo">
+    </figure>
+
     <div class="hero-copy">
-      <span class="eyebrow">Mentoria VSD — Vida Sem Dívidas</span>
+      <span class="eyebrow">Vitor Pauli Finanças</span>
       <h1>Endividado não é sina. <em>É fase.</em></h1>
       <p class="lead">Com Vitor Pauli você aprende a organizar as contas, negociar dívidas e voltar a dormir tranquilo — do jeito que ele mesmo fez, na prática.</p>
       <div class="hero-actions">
@@ -41,21 +68,48 @@
         <a href="https://wa.me/5551996925148" target="_blank" class="btn btn-outline">Falar no WhatsApp →</a>
       </div>
     </div>
-    <div class="hero-figure">
-      <img src="imagens/vitor.webp" alt="Vitor Pauli, fundador da Mentoria VSD">
-    </div>
+
   </div>
+
   <div class="chart-strip">
     <div class="wrap">
-      <svg viewBox="0 0 1056 90" width="100%" height="90" preserveAspectRatio="none">
-      <polyline points="0,20 60,48 110,30 170,66 230,42 290,78 340,52 380,70"
-      fill="none" stroke="#8E4A42" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
-     <circle cx="380" cy="70" r="5" fill="#DEC172"/>
-     <path d="M380,70 C460,58 520,20 620,16 S 820,10 1056,6"
-     fill="none" stroke="#C0982E" stroke-width="3" stroke-linecap="round"/>
-    </svg>
+      <svg class="chart-svg" viewBox="0 0 1000 140" role="img"
+           aria-label="Gráfico: da queda causada pelas dívidas, passando pelo ponto de virada, até a estabilidade financeira">
+        <defs>
+          <linearGradient id="areaOuro" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#C0982E" stop-opacity="0.3"/>
+            <stop offset="1" stop-color="#C0982E" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="linhaOuro" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#DEC172"/>
+            <stop offset="1" stop-color="#C0982E"/>
+          </linearGradient>
+        </defs>
+
+        <g class="chart-grid">
+          <line x1="0" y1="35"  x2="1000" y2="35"/>
+          <line x1="0" y1="70"  x2="1000" y2="70"/>
+          <line x1="0" y1="105" x2="1000" y2="105"/>
+        </g>
+
+        <path class="chart-area"
+              d="M500,118 C580,112 620,70 700,58 S860,30 988,14 L988,140 L500,140 Z"
+              fill="url(#areaOuro)"/>
+
+        <polyline class="chart-queda" pathLength="1"
+                  points="12,30 80,64 140,44 210,88 280,62 350,106 420,80 500,118"/>
+        <path class="chart-subida" pathLength="1"
+              d="M500,118 C580,112 620,70 700,58 S860,30 988,14"
+              stroke="url(#linhaOuro)"/>
+
+        <circle class="chart-dot dot-inicio" cx="12"  cy="30"  r="6"/>
+        <circle class="chart-dot dot-virada" cx="500" cy="118" r="7"/>
+        <circle class="chart-pulse"          cx="988" cy="14"  r="7"/>
+        <circle class="chart-dot dot-hoje"   cx="988" cy="14"  r="7"/>
+      </svg>
+
       <div class="chart-caption">
-        <span>2015 — atolado em dívidas</span>
+        <span>antes de 2000 — um ano de dívidas</span>
         <span>o ponto de virada</span>
         <span>hoje — estabilidade financeira</span>
       </div>
@@ -67,12 +121,12 @@
   <div class="wrap story-grid">
     <div>
       <span class="eyebrow">A história</span>
-      <blockquote>"Há alguns anos, eu estava atolado em dívidas e não sabia como sair daquela situação."</blockquote>
+      <blockquote>"Antes do ano 2000, passei um ano com problemas de dívidas e não sabia como sair daquela situação."</blockquote>
     </div>
     <div class="story-text">
-      <p>Foi um período difícil, mas Vitor decidiu que precisava mudar sua vida financeira. Após muita pesquisa, estudo e disciplina, conseguiu quitar todas as dívidas e alcançar a estabilidade financeira.</p>
-      <p>Hoje, seu propósito é ajudar outras pessoas a saírem das dívidas e conquistarem uma vida financeira saudável — com o mesmo método que usou na própria virada.</p>
-      <p class="story-sig">Vitor Pauli · Fundador, Mentoria VSD</p>
+      <p>Foi um ano difícil, mas Vitor decidiu que precisava mudar sua vida financeira. Nessa fase, leu muitos livros sobre o assunto — um hábito que ficou, e por isso hoje ele mantém uma mini-biblioteca.</p>
+      <p>Após muita pesquisa, estudo e disciplina, conseguiu quitar todas as dívidas e alcançar a estabilidade financeira. Hoje, seu propósito é ajudar outras pessoas a saírem das dívidas e conquistarem uma vida financeira saudável — com o mesmo método que usou na própria virada.</p>
+      <p class="story-sig">Vitor Pauli · Fundador</p>
     </div>
   </div>
 </section>
@@ -153,62 +207,148 @@
       <h2>Depoimentos de quem já saiu do vermelho.</h2>
     </div>
     <div class="test-grid">
-  <div class="test-card">  
-    <img src="imagens/depoimentos/duas.jpg" alt="" class="test-avatar-foto">
-    <p style="font-size:14.5px; color:#C9D2DF; font-style:italic; margin:12px 0 16px;">"Eu não conseguia nem olhar pro extrato do banco. Depois da mentoria, sei exatamente pra onde vai cada real — e já paguei duas dívidas que achava impossível."</p>
-    <span class="story-sig" style="color:var(--gold-300);">Marcelo T. · cliente há 8 meses</span>
-  </div>
-  <div class="test-card">   
-    <img src="imagens/depoimentos/uma.jpg" alt="" class="test-avatar-foto">
-    <p style="font-size:14.5px; color:#C9D2DF; font-style:italic; margin:12px 0 16px;">"O que me marcou foi a clareza. Vitor não fica só no discurso motivacional, ele senta contigo e monta o plano — número por número."</p>
-    <span class="story-sig" style="color:var(--gold-300);">Renata S. · cliente há 1 ano</span>
-  </div>
-  <div class="test-card">
-    <img src="imagens/depoimentos/tres.jpg" alt="" class="test-avatar-foto">
-    <p style="font-size:14.5px; color:#C9D2DF; font-style:italic; margin:12px 0 16px;">"Hoje eu durmo tranquilo. Parece clichê, mas era exatamente isso que eu tinha perdido antes de começar a mentoria."</p>
-    <span class="story-sig" style="color:var(--gold-300);">Carlos E. · cliente há 5 meses</span>
-  </div>
-</div>
+
+      <div class="test-card">
+        <img src="imagens/depoimentos/depoimento1.webp" alt="Foto de Ulisses Ferreira" class="test-avatar-foto">
+        <p class="test-text">"Seu trabalho me ajuda a desenvolver disciplina financeira, compreender cada etapa da negociação bancária e tomar decisões mais conscientes. A assessoria proporciona conhecimento e aprendizado que levamos para a vida."</p>
+        <div class="test-autor">
+          <strong>Ulisses Ferreira</strong>
+          <span>Araputanga/MT</span>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <img src="imagens/depoimentos/depoimento2.webp" alt="Foto do cliente" class="test-avatar-foto">
+        <p class="test-text">"Em apenas quatro meses, já conseguimos reduzir bastante nossas despesas e começar a formar nossa reserva financeira. Hoje, consigo pagar minhas contas e ainda ter dinheiro sobrando no fim do mês, algo que antes parecia muito difícil."</p>
+        <div class="test-autor">
+          <strong>NOME DO CLIENTE</strong>
+          <span>CIDADE/UF</span>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <img src="imagens/depoimentos/depoimento3.webp" alt="Foto de Carina Schabarum" class="test-avatar-foto">
+        <p class="test-text">"Tive momentos em que não sabia como equilibrar minhas contas. A ajuda do Vitor foi muito importante para eu tomar as decisões certas. Para quem deseja sair das dívidas e reorganizar a vida financeira, indico a mentoria do Vitor."</p>
+        <div class="test-autor">
+          <strong>Carina Schabarum</strong>
+          <span>Picada Café/RS</span>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
 <section class="book" id="livro">
   <div class="wrap book-grid">
     <div class="book-cover">
-      <img src="imagens/livro.jpeg" alt="">
+      <img src="imagens/livro.jpeg" alt="Capa do livro com a participação de Vitor Pauli">
     </div>
     <div class="book-copy">
-  <h3>Livre-se das Dívidas: O Caminho para a Estabilidade Financeira</h3>
-  <p class="subtitle">Uma obra coletiva com 6 coautores, cada um compartilhando sua própria trajetória rumo à liberdade financeira.</p>
-  <p>Neste livro, Vitor Pauli assina um dos capítulos, onde compartilha os métodos práticos que usou para sair das dívidas e alcançar estabilidade financeira — ao lado de outros 5 coautores que trazem suas próprias histórias e estratégias sobre o tema.</p>
-  <a href="#" class="btn btn-outline-dark" style="margin-top:18px;">Saiba mais sobre o livro</a>
-</div>
+      <h3>O Resgate da Liberdade Financeira</h3>
+      <p class="subtitle">Uma obra coletiva com 24 coautores, cada um compartilhando sua própria trajetória rumo à liberdade financeira.</p>
+      <p>Neste livro, Vitor Pauli assina um dos capítulos, abordando os seguintes temas:</p>
+
+      <ul class="book-temas">
+        <li>Os sinais de que sua vida financeira precisa de resgate</li>
+        <li>O adiamento: o hábito de deixar para depois</li>
+        <li>Impulsividade: compras sem reflexão</li>
+        <li>Confusão: a falta de clareza financeira</li>
+        <li>Ausência de planejamento</li>
+        <li>A sensação de estar sempre correndo atrás</li>
+      </ul>
+
+      <blockquote class="book-frase">
+        "A mudança de mentalidade é fundamental, porque o dinheiro exige sabedoria."
+        <cite>— Vitor Pauli</cite>
+      </blockquote>
+
+      <a href="#" class="btn btn-outline-dark" style="margin-top:18px;">Saiba mais sobre o livro</a>
+    </div>
   </div>
 </section>
 
 <section class="final-cta" id="contato">
-  <div class="wrap">
-    <span class="eyebrow">Pronto pra começar?</span>
-    <h2>Pronto para respirar aliviado com as contas em dia?</h2>
-    <p>Fale agora no WhatsApp ou deixe seu contato que o Vitor te chama pra agendar o diagnóstico gratuito.</p>
+  <div class="wrap cta-grid">
 
-    <div class="cta-row">
-      <a href="https://wa.me/5551996925148" target="_blank" class="btn btn-gold">Falar no WhatsApp →</a>
+    <div class="cta-texto">
+      <span class="eyebrow">Pronto pra começar?</span>
+      <h2>Pronto para respirar aliviado com as contas em dia?</h2>
+      <p>Fale agora no WhatsApp ou deixe seu contato que o Vitor te chama pra agendar o diagnóstico gratuito.</p>
+      <a href="https://wa.me/5551996925148" target="_blank" rel="noopener" class="btn btn-gold">
+        <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp
+      </a>
     </div>
 
-    <form action="https://formsubmit.co/EMAIL-AQUI" method="POST" class="mini-form">
-      <input type="text" name="nome" placeholder="Seu nome" required />
-      <input type="tel" name="whatsapp" placeholder="Seu WhatsApp" required />
-      <button type="submit" class="btn btn-outline">Quero ser contatado</button>
+    <form action="https://formsubmit.co/EMAIL-AQUI" method="POST" class="cta-form">
+      <h3>Prefere deixar seu contato?</h3>
+
+      <label for="f-nome">Seu nome</label>
+      <input id="f-nome" type="text" name="nome" placeholder="Como posso te chamar?" required>
+
+      <label for="f-whats">Seu WhatsApp</label>
+      <input id="f-whats" type="tel" name="whatsapp" placeholder="(51) 90000-0000" required>
+
+      <label class="cta-consent">
+        <input type="checkbox" name="consentimento" required>
+        <span>Concordo em ser contatado pelo Vitor Pauli sobre a mentoria.</span>
+      </label>
+
+      <!-- proteção e e-mail do formsubmit -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="Novo contato pelo site — Vitor Pauli Finanças">
+      <input type="hidden" name="_template" value="table">
+
+      <button type="submit" class="btn btn-gold">Quero ser contatado</button>
     </form>
+
   </div>
 </section>
 
 <footer>
-  <div class="wrap footer-inner">
-    <span>© <span data-year>2026</span> Vitor Pauli — Mentoria VSD</span>
-    <span><a href="https://instagram.com/euvitorpauli_" target="_blank">@euvitorpauli_</a></span>
-    <span>Site desenvolvido por <a href="https://lrwebdesign.com.br" target="_blank">LR Web Design</a></span>
+  <div class="wrap footer-top">
+
+    <div class="footer-brand">
+      <div class="brand">Vitor Pauli <small>FINANÇAS</small></div>
+      <p>Endividado não é sina. <em>É fase.</em></p>
+      <div class="footer-social">
+        <a href="https://instagram.com/euvitorpauli_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/5551996925148" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#historia">História</a></li>
+        <li><a href="#mentoria">Mentoria</a></li>
+        <li><a href="#livro">Livro</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Programas</h4>
+      <ul>
+        <li><a href="#mentoria">Mentoria de Dívidas</a></li>
+        <li><a href="#mentoria">Organização Financeira</a></li>
+        <li><a href="#contato">Diagnóstico gratuito</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="https://wa.me/5551996925148" target="_blank" rel="noopener">(51) 99692-5148</a></li>
+        <li><a href="https://instagram.com/euvitorpauli_" target="_blank" rel="noopener">@euvitorpauli_</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="wrap footer-bottom">
+    <span>© <span data-year>2026</span> Vitor Pauli Finanças. Todos os direitos reservados.</span>
+    <span>Site desenvolvido por <a href="https://lrwebdesign.com.br" target="_blank" rel="noopener">LR Web Design</a></span>
   </div>
 </footer>
 
